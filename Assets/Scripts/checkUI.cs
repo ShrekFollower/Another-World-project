@@ -3,38 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class VitalScreen : MonoBehaviour
+public class checkUI : MonoBehaviour
 {
-    
-    public GameObject main;
-    
+
+    public GameObject camera;
     public Image original;
-    public Sprite image;
     public Sprite image1;
     public Sprite image2;
-    public playerHealth player;
+    public cameraCollider cameraCollider;
 
-    // Start is called before the first frame update
     void Start()
     {
-        player = main.GetComponent<playerHealth>();
+        cameraCollider = camera.GetComponent<cameraCollider>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if(player.health == 3)
-        {
-            original.sprite = image;
-        }
-        
-        if(player.health == 2)
+        if(cameraCollider.targetCheck == 1)
         {
             original.sprite = image1;
         }
 
-        if(player.health == 1)
+        if(cameraCollider.targetCheck == 0)
         {
             original.sprite = image2;
         }

@@ -11,8 +11,8 @@ public class playerMovement : MonoBehaviour
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
     float sprintBar = 6;
-    bool isSprinting;
-    bool canSprint;
+    public float isSprinting;
+    public float canSprint = 1;
     float timer = 0;
 
     Vector3 velocity;
@@ -25,7 +25,7 @@ public class playerMovement : MonoBehaviour
 
     void Start()
     {
-        canSprint = true;
+        canSprint = 1;
     }
     
     void Update()
@@ -56,34 +56,34 @@ public class playerMovement : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
-        if(Input.GetKeyDown(KeyCode.LeftShift) && canSprint == true)
+        if(Input.GetKeyDown(KeyCode.LeftShift) && canSprint == 1)
         {
             speed = 15f;
-            isSprinting = true;
+            isSprinting = 1;
         }
 
         if(Input.GetKeyUp(KeyCode.LeftShift))
         {
             speed = 10f;
-            isSprinting = false;
+            isSprinting = 0;
         }
 
-        while(isSprinting == true)
+        while(isSprinting == 1)
         {
             sprintBar -= Time.deltaTime;
             if(sprintBar <= 0)
             {
-                canSprint = false;
-                isSprinting = false;
+                canSprint = 0;
+                isSprinting = 0;
             }
         }
 
-        while(isSprinting == false && sprintBar != 6)
+        while(isSprinting == 0 && sprintBar != 6)
         {
             sprintBar += Time.deltaTime;
             if(sprintBar == 6)
             {
-                canSprint = true;
+                canSprint = 1;
             }
         }
 

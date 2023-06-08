@@ -27,12 +27,16 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //processes the players inputs on the mouse's X and Y axis, then moves it in the correct direction.
         float mouseX = Input.GetAxis("Mouse X") * mouseSens * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSens * Time.deltaTime;
 
         xRotation -= mouseY;
+        
+        //Clamps the movement of the camera so you cant move it too high or low.
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
+        //Rotates the camera and playerbody.
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
     }

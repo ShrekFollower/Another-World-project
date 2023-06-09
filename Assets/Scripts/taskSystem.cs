@@ -16,19 +16,19 @@ public class taskSystem : MonoBehaviour
     
     void Start()
     {
-        taskArray[0] = "Floater";
-        taskArray[1] = "Baby Floater";
+        taskArray[0] = "Folinator Queen";
+        taskArray[1] = "Folinator";
         taskArray[2] = "Ashling";
-        taskArray[3] = "Folinator";
-        taskArray[4] = "Luscus Viator";
-        taskArray[5] = "Folinator Queen";
+        taskArray[3] = "Floater";
+        taskArray[4] = "Baby Floater";
+        taskArray[5] = "Luscus Viator";
 
-        taskHint[0] = "Found near the bottom of trees";
-        taskHint[1] = "Found near adult Floaters";
+        taskHint[0] = "Found near the Big Tree";
+        taskHint[1] = "Found near bundles of sticks (near the queens nest)";
         taskHint[2] = "Found alone near rocks";
-        taskHint[3] = "Found near piles of sticks";
-        taskHint[4] = "Luscus Viator";
-        taskHint[5] = "Folinator Queen";
+        taskHint[3] = "Found near the highest mountain peak";
+        taskHint[4] = "Found near the adult floaters";
+        taskHint[5] = "Found in big open areas";
         nowTask = "Floater";
 
         PhotoTaken = Camera.GetComponent<photoTaken>();
@@ -38,5 +38,6 @@ public class taskSystem : MonoBehaviour
     {
         nowTask = taskArray[PhotoTaken.nextTask];
         name.text = taskArray[PhotoTaken.nextTask];
+        hint.text = taskHint[PhotoTaken.nextTask];
     }
 }

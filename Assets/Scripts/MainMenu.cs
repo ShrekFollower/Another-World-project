@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("Test Scene");
+        SceneManager.LoadScene("ForestMap");
     }
 
     public void QuitGame()

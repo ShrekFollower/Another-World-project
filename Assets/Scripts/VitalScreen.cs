@@ -14,13 +14,11 @@ public class VitalScreen : MonoBehaviour
     public Sprite image2;
     public playerHealth player;
 
-    // Start is called before the first frame update
     void Start()
     {
         player = main.GetComponent<playerHealth>();
     }
 
-    // Update is called once per frame
     void Update()
     {
 

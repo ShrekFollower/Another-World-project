@@ -10,6 +10,7 @@ public class photoTaken : MonoBehaviour
     public GameObject Camera;
     public taskSystem taskSystem;
     public cameraCollider cameraCollider;
+    public int nextTask = 0;
 
     // Start is called before the first frame update
     
@@ -35,6 +36,8 @@ public class photoTaken : MonoBehaviour
                                     photoName + ".png"; 
             ScreenCapture.CaptureScreenshot(System.IO.Path.Combine(folderPath, screenshotName),2); // takes the sceenshot.
             Debug.Log(folderPath + screenshotName); // You get instant feedback in the console
+            nextTask ++;
+            
         }
     }
 }

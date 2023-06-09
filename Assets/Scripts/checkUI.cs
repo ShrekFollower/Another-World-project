@@ -17,7 +17,6 @@ public class checkUI : MonoBehaviour
         cameraCollider = camera.GetComponent<cameraCollider>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(cameraCollider.targetCheck == 1)

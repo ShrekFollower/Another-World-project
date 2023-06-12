@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ForestMap.unity
     guid: 89222306f4af8fe4a8bf23fd22bfda0b
+  - enabled: 1
+    path: Assets/Scenes/PhotoReel.unity
+    guid: c94b2deedd7b6f34c81a24f495031e9c
   m_configObjects: {}

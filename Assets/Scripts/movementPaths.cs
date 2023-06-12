@@ -10,6 +10,8 @@ public class movementPaths : MonoBehaviour
     public GameObject[] pathPoints;
     public int numberOfPoints;
     public float speed;
+    public int resetValue;
+    public float lookValue;
 
     private Vector3 actualPosition;
     private int x;
@@ -24,6 +26,10 @@ public class movementPaths : MonoBehaviour
     {
         actualPosition = obj.transform.position;
         obj.transform.position = Vector3.MoveTowards(actualPosition, pathPoints[x].transform.position, speed * Time.deltaTime);
+        if(lookValue == 1)
+        {
+            transform.LookAt(pathPoints[x].transform.position);
+        }
 
         if(actualPosition == pathPoints[x].transform.position && x != numberOfPoints - 1)
         {
@@ -34,9 +40,17 @@ public class movementPaths : MonoBehaviour
             }
         }
 
-        if(actualPosition == pathPoints[x].transform.position && x == 4)
+        if(actualPosition == pathPoints[x].transform.position && x == resetValue)
         {
             x = 1;
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Reset")
+        {
+            x = resetValue;
         }
     }
 }

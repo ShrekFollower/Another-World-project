@@ -26,7 +26,7 @@ public class playerHealth : MonoBehaviour
     {
         if(health <= 0)
         {
-            SceneManager.LoadScene("Test Scene");
+            SceneManager.LoadScene("ForestMap");
         }
     }
 }

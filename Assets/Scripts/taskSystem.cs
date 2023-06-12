@@ -7,12 +7,12 @@ public class taskSystem : MonoBehaviour
 {
     
     public string nowTask;
-    string[] taskArray = new string [6];
+    string[] taskArray = new string [7];
     public GameObject Camera;
     public photoTaken PhotoTaken;
     public TMP_Text hint;
     public TMP_Text name;
-    string[] taskHint = new string [6];
+    string[] taskHint = new string [7];
     
     void Start()
     {
